@@ -34,23 +34,27 @@ void ask_for_numbers_give_reply(int &user_number, int our_number)
     }
 }
 
+   void give_reply_when_guess_equals_true_or_runs_out(int &user_number, int our_number) 
+   {
+        if (user_number == our_number)
+        {
+           std::cout << "Great job!" << std::endl;
+        }
+        else
+        {
+           std::cout << "Sorry, you ran out of attempts. :´(" << std::endl;
+        }
+        
+   }
 int main()
 {
     auto user_number{0};
     int our_number;
     welcome_and_pick_number(our_number);
     ask_for_numbers_give_reply(user_number, our_number);
+    give_reply_when_guess_equals_true_or_runs_out(user_number, our_number);
 
+    
 
-    {
-        if (user_number == our_number)
-        {
-            std::cout << "Great job!" << std::endl;
-        }
-        else
-        {
-            std::cout << "Sorry, you ran out of attempts. :´(" << std::endl;
-        }
-    }
     return 0;
 }
